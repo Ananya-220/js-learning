@@ -280,3 +280,17 @@ console.log(output1);
 // Names of people whose age is less than 30
 const output2 = users.filter(x => x.age < 30).map((x) => x.firstName);
 console.log(output2);
+
+
+// Combining all three methods (map , filter , reduce) together
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+
+// Step 1: Double each number
+// Step 2: Keep only numbers greater than 10
+// Step 3: Find the total sum
+let result = numbers
+  .map(num => num * 2)
+  .filter(num => num > 10)
+  .reduce((sum, num) => sum + num, 0);
+
+console.log(result);
