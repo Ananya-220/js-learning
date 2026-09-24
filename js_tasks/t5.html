@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5</title>
+</head>
+
+<body>
+    <h1>Task 5</h1>
+    Type here : <br><br>
+    <textarea id="count" rows=8 cols="40" placeholder="Enter text here"></textarea><br><br>
+    <p>Characters : <span id="char-count">0</span></p>
+    <p>Words : <span id="word-count">0</span></p>
+
+    <script>
+        const textarea = document.getElementById('count');
+        const charCount = document.getElementById('char-count');
+        const wordCount = document.getElementById('word-count');
+
+        textarea.addEventListener('input', () => {
+            const text = textarea.value;
+
+            // 1. Count Characters (includes spaces and line breaks)
+            charCount.textContent = text.length;
+
+            // 2. Count Words
+            // Remove whitespace from both ends, then split by any sequence of whitespace characters
+            const trimmedText = text.trim();
+
+            if (trimmedText === '') {
+                wordCount.textContent = 0;
+            } else {
+                // Regex \s+ catches spaces, tabs, and newlines accurately
+                const words = trimmedText.split(/\s+/);
+                wordCount.textContent = words.length;
+            }
+        });
+    </script>
+
+</body>
+
+</html>
