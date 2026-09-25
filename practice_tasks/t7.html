@@ -11,35 +11,66 @@
 
     <h1>Practice Task 7</h1>
 
-    Name : <input type="text" id="name" placeholder="Enter your name"><br><br>
+    <form id="demoForm">
+        Name : <input type="text" id="name" placeholder="Enter your name">
+        <p id="nameErr" style="color: red;"></p><br><br>
 
-    Age : <input type="number" id="age" placeholder="Enter your age"><br><br>
+        Age : <input type="number" id="age" placeholder="Enter your age">
+        <p id="ageErr" style="color: red;"></p><br><br>
 
-    City : <input type="text" id="city" placeholder="Enter your city"><br><br>
+        City : <input type="text" id="city" placeholder="Enter your city">
+        <p id="cityErr" style="color: red;"></p><br><br>
 
-    <button onclick="showDetails()">Show Details</button>
+        <button onclick="showDetails(event)">Show Details</button>
 
-    <p id="display"></p>
+        <button onclick="reset()">Reset</button>
+
+        <p id="display"></p>
+    </form>
 
     <script>
-        function showDetails() {
+        function showDetails(e) {
+            e.preventDefault()
             let name = document.getElementById("name").value;
             let age = document.getElementById("age").value;
             let city = document.getElementById("city").value;
+            let validation = true;
 
-            if (!name || !age || !city) {
-                document.getElementById("display").innerText = "Enter All Details First !";
+            if (name == "") {
+                document.getElementById("nameErr").innerText = "Name is required !";
+                validation = false;
+            }
+            else {
+                document.getElementById("nameErr").innerText = "";
             }
 
+            if (age == "" || age < 0) {
+                document.getElementById("ageErr").innerText = "Age is required !";
+                validation = false;
+            }
             else {
+                document.getElementById("ageErr").innerText = "";
+            }
+
+            if (city == "") {
+                document.getElementById("cityErr").innerText = "City is required !";
+                validation = false;
+            }
+            else {
+                document.getElementById("cityErr").innerText = "";
+            }
+
+            if (validation) {
                 document.getElementById("display").innerText = `Name : ${name}
                 Age : ${age}
                 City : ${city}`;
+
             }
-
-
-
+            else {
+                document.getElementById("display").innerText = "";
+            }
         }
+
     </script>
 
 </body>

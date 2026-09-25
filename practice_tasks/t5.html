@@ -13,14 +13,15 @@
 
     <p>Button Clicked : <span id="btn-count">0</span></p> 
 
-    <button id="btn-click" onclick="increase()">Increase</button>
+    <button id="btn-click" >Increase</button>
 
     <script>
-        let count = 0;
-        function increase() {
+        const btn = document.querySelector('#btn-click');
+
+        btn.addEventListener('click', () => {
             var btnCount = document.getElementById("btn-count");
-            btnCount.innerHTML = ++count;
-        }
+            btnCount.innerHTML = parseInt(btnCount.innerHTML) + 1;
+        })
     </script>
 
 

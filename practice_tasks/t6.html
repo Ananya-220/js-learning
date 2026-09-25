@@ -11,27 +11,31 @@
 
     <h1>Practice Task 6</h1>
 
-    <p>Button Clicked : <span id="btn-count">0</span></p> 
+    <p>Button Clicked : <span id="btn-count">0</span></p>
 
     <button onclick="increase()">Increase</button>
 
     <button onclick="decrease()">Decrease</button>
 
     <script>
-        let count = 0;
+
+        let counter = document.getElementById('btn-count');
+
         function increase() {
-            var btnCount = document.getElementById("btn-count");
-            btnCount.innerHTML = ++count;
+            let count = parseInt(counter.innerHTML) + 1;
+            counter.innerHTML = count;
         }
 
         function decrease() {
-            var btnCount = document.getElementById("btn-count");
-            if (count > 0) {
-                btnCount.innerHTML = --count;
+            let count = parseInt(counter.innerHTML) - 1;
+            if (count >= 0) {
+                counter.innerHTML = count;
             }
         }
+
     </script>
 
 
 </body>
+
 </html>
