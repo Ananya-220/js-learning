@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Task 2</title>
+</head>
+
+<style>
+    #para {
+        display: block;
+        background-color: aqua;
+    }
+</style>
+
+<body>
+
+    <h1>Practice Task 2</h1>
+
+    <p id="para">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+        Error molestiae odit ipsam, atque voluptatibus aut
+        voluptatum suscipit. Placeat esse sapiente, distinctio quod dolorum
+        laboriosam voluptatum sed nostrum
+        dignissimos rem voluptate.
+    </p><br>
+
+    <button onclick="hidePara()">Hide</button>
+
+    <script>
+        function hidePara() {
+            let paragraph = document.getElementById('para');
+            paragraph.style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>

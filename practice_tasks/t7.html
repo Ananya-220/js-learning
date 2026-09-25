@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Task 7</title>
+</head>
+
+<body>
+
+    <h1>Practice Task 7</h1>
+
+    Name : <input type="text" id="name" placeholder="Enter your name"><br><br>
+
+    Age : <input type="number" id="age" placeholder="Enter your age"><br><br>
+
+    City : <input type="text" id="city" placeholder="Enter your city"><br><br>
+
+    <button onclick="showDetails()">Show Details</button>
+
+    <p id="display"></p>
+
+    <script>
+        function showDetails() {
+            let name = document.getElementById("name").value;
+            let age = document.getElementById("age").value;
+            let city = document.getElementById("city").value;
+
+            if (!name || !age || !city) {
+                document.getElementById("display").innerText = "Enter All Details First !";
+            }
+
+            else {
+                document.getElementById("display").innerText = `Name : ${name}
+                Age : ${age}
+                City : ${city}`;
+            }
+
+
+
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Task 3</title>
+</head>
+
+<style>
+    #para {
+        display: none;
+        background-color: aqua;
+    }
+</style>
+
+<body>
+
+    <h1>Practice Task 3</h1>
+
+    <div id="para">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+        Error molestiae odit ipsam, atque voluptatibus aut
+        voluptatum suscipit. Placeat esse sapiente, distinctio quod dolorum
+        laboriosam voluptatum sed nostrum
+        dignissimos rem voluptate.
+    </div><br>
+
+    <button onclick="showDiv()">Show Details</button>
+
+    <script>
+        function showDiv() {
+            let div = document.getElementById('para');
+            div.style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
