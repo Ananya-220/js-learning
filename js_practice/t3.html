@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3</title>
+</head>
+<style>
+    body {
+        background-color:rgb(251, 220, 255);
+    }
+
+    .btn {
+        margin-top: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+</style>
+<body>
+    
+    <h1 align="center">Task : Counter Application</h1>
+    <div class="btn">
+        <button id="decrease">-</button>
+        <p><span id="btn-count">0</span></p>
+        <button id="increase">+</button>
+        <button id="reset">Reset</button>
+    </div>
+
+    <script>
+        let counter = document.getElementById("btn-count");
+        let increaseCounter = document.getElementById("increase");
+        let decreaseCounter = document.getElementById("decrease");
+        let resetCounter = document.getElementById("reset");
+
+        increaseCounter.addEventListener("click" , () => {
+            let count = parseInt(counter.innerHTML) + 1;
+            counter.innerHTML = count;
+        });
+        decreaseCounter.addEventListener("click" , () => {
+            let count = parseInt(counter.innerHTML) - 1;
+            if (count >= 0) {
+                counter.innerHTML = count;
+            }
+        });
+        resetCounter.addEventListener("click" , () => {
+            counter.innerHTML = 0; 
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4</title>
+</head>
+<style>
+    body {
+        background-color: rgb(182, 237, 255);
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        background-color: #fff;
+        width: 400px;
+        padding: 40px;
+        margin-top: 100px;
+        border-radius: 10px;
+        border: 2px solid #000;
+        text-align: center;
+        position: relative;
+    }
+
+    .counter {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1>Task : Character Counter</h1>
+        Type here : <br><br>
+        <textarea id="count" rows=8 cols="40" placeholder="Enter text here"></textarea>
+        <div class="counter">
+            <p>Characters Used : <span id="charCount"></span></p>
+            <p>Characters Remaining : <span id="remainingCount"></span></p>
+        </div>
+        <span id="error"></span>
+    </div>
+    <script>
+        const textarea = document.getElementById("count");
+        const charCounter = document.getElementById("charCount");
+        const remainingCounter = document.getElementById("remainingCount");
+        const err = document.getElementById("error");
+
+        const maxLength = 200;
+
+        err.style.color = "red";
+
+        charCounter.innerHTML = 0;
+        remainingCounter.innerHTML = maxLength;
+
+        textarea.addEventListener("input", () => {
+            const text = textarea.value;
+
+            charCounter.innerHTML = text.length;
+            remainingCounter.innerHTML = maxLength - text.length;
+
+            if (text.length >= maxLength) {
+                err.innerHTML = "Character limit reached!";
+                textarea.disabled = true;
+            }
+        });
+    </script>
+
+</body>
+
+</html>

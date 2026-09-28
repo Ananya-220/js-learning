@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 7</title>
+</head>
+<style>
+    body {
+        background-color: pink;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        background-color: #fff;
+        width: 700px;
+        padding: 40px;
+        margin-top: 40px;
+        border-radius: 10px;
+        border: 2px solid #000;
+        text-align: center;
+        position: relative;
+        gap: 10px;
+    }
+
+    .input {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1>Task : To-Do List</h1>
+        <div class="input">
+            Enter Task : <input type="text" id="task" placeholder="Enter Task">
+            <p id="taskErr" style="color: red;"></p>
+            <button id="addBtn">Add Task</button>
+            <ul id="taskList"></ul>
+        </div>
+    </div>
+    <script>
+        let addTask = document.getElementById("addBtn");
+        let enteredTask = document.getElementById("task").value;
+        let error = document.getElementById("taskErr");
+        let taskList = document.getElementById("taskList");
+        let validation = true;
+        addTask.addEventListener("click", () => {
+            let list = document.createElement("li");
+            
+
+            if (enteredTask == "") {
+                error.innerHTML = "Enter a Task !";
+                validation = false;
+            }
+            else {
+                error.innerHTML = "";
+            }
+
+        });
+    </script>
+
+
+</body>
+
+</html>

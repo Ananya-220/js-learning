@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+</head>
+
+<style>
+    body {
+        background-color: aqua;
+    }
+
+    .head {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+
+<body>
+
+    <div class="head">
+        <h1 class="heading" id="heading"> Welcome to JavaScript</h1>
+        <button id="changeHeading">Change Message</button>
+    </div>
+
+
+    <script>
+        let btn = document.getElementById("changeHeading");
+
+        btn.addEventListener("click", () => {
+            document.getElementById("heading").innerText = "JavaScript makes websites interactive!";
+        });
+    </script>
+
+</body>
+
+</html>

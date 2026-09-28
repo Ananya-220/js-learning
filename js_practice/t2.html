@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+</head>
+<style>
+    body {
+        background-color: bisque;
+    }
+
+    .btn {
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 13px;
+    }
+</style>
+
+<body>
+
+    <h1 align="center">Task : Change Background Color</h1>
+
+    <div class="btn">
+        <button id="changeBG">Change Background</button>
+        <button id="resetBG">Reset Background</button>
+    </div>
+
+    <script>
+        let change = document.getElementById("changeBG");
+        let reset = document.getElementById("resetBG");
+        const originalColor = document.body.style.backgroundColor;
+
+        change.addEventListener("click", () => {
+            document.body.style.backgroundColor = "aqua";
+        });
+
+        reset.addEventListener("click", () => {
+            document.body.style.backgroundColor = originalColor;
+        });
+    </script>
+
+</body>
+
+</html>

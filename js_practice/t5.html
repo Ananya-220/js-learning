@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5</title>
+</head>
+<style>
+    body {
+        background-color: antiquewhite;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .input {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+</style>
+
+<body>
+
+    <h1 align="center">Task :  Show / Hide Password</h1>
+    <div class="input">
+        Enter Password : <input type="password" id="password"><br><br>
+        <button id="showPassword">Show Password</button>
+    </div>
+
+    <script>
+        let show = document.getElementById("showPassword");
+
+        show.addEventListener("click", () => {
+            let psswd = document.getElementById("password");
+            if (psswd.type === "password") {
+                psswd.type = "text";
+                show.innerHTML = "Hide Password";
+            } else {
+                psswd.type = "password";
+                show.innerHTML = "Show Password";
+            }
+        });
+    </script>
+
+</body>
+
+</html>
