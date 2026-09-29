@@ -1,108 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple To-Do List</title>
+<script>
+        const searchInput = document.getElementById('input');
+        const listItems = document.querySelectorAll('ul li');
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 30px;
-        }
-
-        input {
-            padding: 8px;
-            width: 220px;
-        }
-
-        button {
-            padding: 8px 12px;
-            cursor: pointer;
-        }
-
-        ul {
-            padding: 0;
-        }
-
-        li {
-            list-style: none;
-            margin: 10px 0;
-        }
-
-        span {
-            cursor: pointer;
-            margin-right: 10px;
-        }
-    </style>
-</head>
-<body>
-
-    <h2>To-Do List</h2>
-
-    <input type="text" id="taskInput" placeholder="Enter Task">
-    <button id="addBtn">Add Task</button>
-
-    <p id="message">No tasks available</p>
-
-    <ul id="taskList"></ul>
-
-    <script>
-        let input = document.getElementById("taskInput");
-        let button = document.getElementById("addBtn");
-        let taskList = document.getElementById("taskList");
-        let message = document.getElementById("message");
-
-        button.addEventListener("click", function () {
-
-            let task = input.value.trim();
-
-            // Do not allow empty tasks
-            if (task === "") {
-                alert("Please enter a task.");
-                return;
-            }
-
-            // Hide message
-            message.style.display = "none";
-
-            // Create list item
-            let li = document.createElement("li");
-
-            // Create task text
-            let span = document.createElement("span");
-            span.innerText = task;
-
-            // Mark task as completed
-            span.addEventListener("click", function () {
-                span.style.textDecoration = "line-through";
-            });
-
-            // Create delete button
-            let deleteBtn = document.createElement("button");
-            deleteBtn.innerText = "Delete";
-
-            // Delete task
-            deleteBtn.addEventListener("click", function () {
-                li.remove();
-
-                // Show message if no tasks remain
-                if (taskList.children.length === 0) {
-                    message.style.display = "block";
+        searchInput.addEventListener('input', () => {
+            listItems.forEach(item => {
+                if (item.innerHTML.toLowerCase().includes(searchInput.value.toLowerCase())) {
+                    item.style.display = ''; 
+                    item.style.color = 'black'; 
+                } else {
+                    item.style.display = 'none'; 
                 }
             });
-
-            // Add task text and button to list item
-            li.appendChild(span);
-            li.appendChild(deleteBtn);
-
-            // Add list item to list
-            taskList.appendChild(li);
-
-            // Clear input
-            input.value = "";
         });
+
     </script>
 
-</body>
-</html>
+    

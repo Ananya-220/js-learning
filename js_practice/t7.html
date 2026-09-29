@@ -7,9 +7,14 @@
     <title>Task 7</title>
 </head>
 <style>
+    * {
+        box-sizing: border-box;
+    }
+
     body {
         background-color: pink;
-        box-sizing: border-box;
+        margin: 0;
+        min-height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -18,53 +23,130 @@
 
     .container {
         background-color: #fff;
-        width: 700px;
-        padding: 40px;
+        width: 550px;
+        max-width: 90%;
+        min-height: 400px;
+        padding: 30px;
         margin-top: 40px;
         border-radius: 10px;
         border: 2px solid #000;
         text-align: center;
-        position: relative;
-        gap: 10px;
     }
 
     .input {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 20px;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    #task {
+        width: 200px;
+        padding: 10px;
+        border: 1px solid #999;
+        border-radius: 5px;
+    }
+
+    #taskList {
+        text-align: left;
+        padding-left: 25px;
+        margin-top: 20px;
+    }
+
+    button {
+        padding: 10px 15px;
+        border: 1px solid #000;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    #taskList li {
+        margin: 10px 0;
+        padding: 10px;
+        background-color: #ffe4ec;
+        border-radius: 5px;
+        cursor: pointer;
+        overflow-wrap: anywhere;
+    }
+
+    .completed {
+        text-decoration: line-through;
+        color: black;
+    }
+
+    .deleteBtn {
+        float: right;
+        padding: 5px 10px;
     }
 </style>
 
 <body>
     <div class="container">
+
         <h1>Task : To-Do List</h1>
+
         <div class="input">
-            Enter Task : <input type="text" id="task" placeholder="Enter Task">
-            <p id="taskErr" style="color: red;"></p>
+            Enter Task :
+            <input type="text" id="task" placeholder="Enter Task">
+
             <button id="addBtn">Add Task</button>
-            <ul id="taskList"></ul>
+
+            <p id="taskErr" style="color: red;"></p>
         </div>
+
+        <p id="noTask">No tasks available</p>
+
+        <ul id="taskList"></ul>
+
     </div>
+
     <script>
         let addTask = document.getElementById("addBtn");
-        let enteredTask = document.getElementById("task").value;
+        let enteredTask = document.getElementById("task");
         let error = document.getElementById("taskErr");
         let taskList = document.getElementById("taskList");
-        let validation = true;
-        addTask.addEventListener("click", () => {
-            let list = document.createElement("li");
-            
+        let noTask = document.getElementById("noTask");
 
-            if (enteredTask == "") {
-                error.innerHTML = "Enter a Task !";
-                validation = false;
+        addTask.addEventListener("click", function () {
+
+            let taskName = enteredTask.value.trim();
+
+            if (taskName == "") {
+                error.innerHTML = "Enter a Task!";
             }
             else {
                 error.innerHTML = "";
+
+                let list = document.createElement("li");
+                let deleteBtn = document.createElement("button");
+
+                list.innerHTML = taskName;
+                deleteBtn.innerHTML = "Delete";
+                deleteBtn.className = "deleteBtn";
+
+                list.addEventListener("click", function () {
+                    list.classList.toggle("completed");
+                });
+
+                deleteBtn.addEventListener("click", () => {
+                    list.remove();
+
+                    if (taskList.length == 0) {
+                        noTask.style.display = "block";
+                    }
+                });
+
+                list.appendChild(deleteBtn);
+                taskList.appendChild(list);
+
+                noTask.style.display = "none";
+
+                enteredTask.value = "";
             }
 
         });
+
     </script>
 
 
