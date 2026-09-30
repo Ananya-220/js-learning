@@ -7,23 +7,27 @@
     <title>Task 10</title>
 </head>
 <style>
-    #clock {
-        font-size: 120px;
-        gap: 4px;
-        width: 800px;
-        margin: 100px;
+    body {
+        background-color: lightcyan;
+        box-sizing: border-box;
         display: flex;
+        flex-direction: column;
         justify-content: center;
-        text-align: center;
-        border: 2px solid black;
-        border-radius: 20px;
+        align-items: center;
+    }
+    h1 , .digiClock {
+        font-size: 40px;
     }
 </style>
 
 <body>
 
     <h1 align="center">Task : Digital Clock</h1>
-    <div id="clock"></div>
+    <div class="digiClock">
+        <p id="date"></p>
+        <p id="clock"></p>
+    </div>
+    
 
     <script>
         function digitalClock() {
@@ -40,9 +44,14 @@
                 am_pm = "A.M."
             }
 
-            document.getElementById("clock").innerHTML = `${hours} : ${minutes} : ${seconds}   ${am_pm}`;
+            const year = today.getFullYear();
+            const month = String(today.getMonth() + 1);
+            const day = String(today.getDate());
+
+            document.getElementById("date").innerHTML = `${day} - ${month} - ${year}`
+
+            document.getElementById("clock").innerHTML = `${hours} : ${minutes} : ${seconds}  ${am_pm}`;
         }
-        
         setInterval(digitalClock, 1000);
     </script>
 
