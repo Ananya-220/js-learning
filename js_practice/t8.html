@@ -113,14 +113,14 @@
 
         searchInput.addEventListener("input", () => {
 
-            let searchText = searchInput.value.toLowerCase();
+            let searchItem = searchInput.value.toLowerCase();
             let found = false;
 
             listItems.forEach((item) => {
 
                 let food = item.innerHTML.toLowerCase();
 
-                if (food.includes(searchText)) {
+                if (food.includes(searchItem)) {
                     item.style.display = "";
                     found = true;
                 } else {

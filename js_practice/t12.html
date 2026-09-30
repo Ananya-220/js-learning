@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 12</title>
+</head>
+<style>
+
+    body {
+        background-color: lightcyan;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        background-color: #fff;
+        width: 400px;
+        padding: 40px;
+        margin-top: 100px;
+        border-radius: 10px;
+        border: 2px solid #000;
+        text-align: center;
+        position: relative;
+        gap: 20px;
+    }
+
+    p {
+        font-size: 20px;
+    }
+
+    button {
+        font-size: large;
+        background-color: lightcyan;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1>Task : Delayed Notification</h1>
+        <p id="message"></p>
+        <button id="placeOrder">Place Order</button>
+    </div>
+
+    <script>
+
+        let btn = document.getElementById("placeOrder");
+        let displayMsg = document.getElementById("message");
+
+        btn.addEventListener("click" , () => {
+            btn.disabled = true;
+            displayMsg.innerText = "Processing Your Order....";
+            displayMsg.style.color = "red";
+
+            setTimeout(() => {
+                displayMsg.innerText = "Order placed successfully !";
+                displayMsg.style.color = "green";
+                btn.disabled = false;
+            } , 3000);
+
+        });
+
+    </script>
+
+</body>
+
+</html>

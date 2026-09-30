@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 9</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        height: 100%;
+        background-color: lavender;
+        margin: 0;
+    }
+
+    .tab {
+        overflow: hidden;
+        border: 1px solid gray;
+        background-color: #f1f1f1;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 100px;
+    }
+
+    .tab button {
+        background-color: inherit;
+        float: center;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        font-size: 17px;
+    }
+
+    .tab button:hover {
+        background-color: rgb(191, 191, 252);
+    }
+
+    .tab button.active {
+        background-color: rgb(191, 191, 252);
+        border-bottom: rgb(126, 126, 253);
+    }
+
+    .tabContent {
+        height: 100%;
+        display: none;
+        padding: 6px 12px;
+        border: 1px solid black;
+        border-top: none;
+    }
+</style>
+
+<body>
+
+    <h1 align="center">Task : Tabs Component</h1>
+
+    <div class="tab">
+        <button class="tabLinks">About</button>
+        <button class="tabLinks">Services</button>
+        <button class="tabLinks">Contact</button>
+    </div>
+
+    <div id="about" class="tabContent">
+
+        <h2>About</h2>
+
+        <p>
+            Welcome to Gather & Gravy , your ultimate culinary destination where passion meets the plate. We believe
+            that
+            good food is a universal language capable of bringing people together, comforting the soul, and creating
+            lasting memories. Our mission is to break down the art of cooking into simple, joyful steps by sharing a
+            curated collection of reliable recipes, fresh kitchen inspiration, and honest food guides. Whether you are a
+            seasoned home chef or just learning your way around the kitchen, we focus on bold flavors, accessible
+            ingredients, and diverse dishes that welcome everyone to the table. Pull up a chair and let’s make something
+            delicious together!
+        </p>
+
+    </div>
+
+    <div id="services" class="tabContent">
+        <h2>Services</h2>
+
+        <p>
+            From custom recipe creation and vibrant food photography to interactive cooking workshops, we offer a full
+            suite of culinary services designed to inspire and elevate your food experience. Whether you are a brand
+            looking for mouth-watering content, a host planning an intimate dinner event, or an aspiring cook eager to
+            sharpen your kitchen skills, we bring professional expertise and flavor-first creativity to every project.
+
+        </p>
+    </div>
+
+    <div id="contact" class="tabContent">
+
+        <h2>Contact</h2>
+
+        <p>
+            <strong>Get in Touch:</strong> Got a question or a delicious idea? Send us a message using our online
+            contact form, or reach out directly via email at <a href="mailto:hello@yourwebsite.com">hello@Gather &
+                Gravy.com</a>. You can also catch behind-the-scenes
+            kitchen updates by following us on Instagram <a href="https://instagram.com" target="_blank">@Gather &
+                Gravy</a>. We read every note and will get back to you within 24 to 48 hours!
+        </p>
+
+    </div>
+
+    <script>
+
+        let buttons = document.getElementsByClassName("tabLinks");
+        let content = document.getElementsByClassName("tabContent");
+
+        function showTab(tabId, button) {
+            for (let i = 0; i < content.length; i++) {
+                content[i].style.display = "none";
+            }
+
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove("active");
+            }
+
+            document.getElementById(tabId).style.display = "block";
+            button.classList.add("active");
+        }
+
+        buttons[0].onclick = () => {
+            showTab("about", buttons[0]);
+        };
+
+        buttons[1].onclick = () => {
+            showTab("services", buttons[1]);
+        };
+
+        buttons[2].onclick = () => {
+            showTab("contact", buttons[2]);
+        };
+
+    </script>
+
+
+</body>
+
+</html>

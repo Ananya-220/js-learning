@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 10</title>
+</head>
+<style>
+    #clock {
+        font-size: 120px;
+        gap: 4px;
+        width: 800px;
+        margin: 100px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        border: 2px solid black;
+        border-radius: 20px;
+    }
+</style>
+
+<body>
+
+    <h1 align="center">Task : Digital Clock</h1>
+    <div id="clock"></div>
+
+    <script>
+        function digitalClock() {
+            const today = new Date();
+            let hours = today.getHours();
+            let minutes = today.getMinutes();
+            let seconds = today.getSeconds();
+            let am_pm;
+
+            if (hours > 12) {
+                am_pm = "P.M.";
+            }
+            else {
+                am_pm = "A.M."
+            }
+
+            document.getElementById("clock").innerHTML = `${hours} : ${minutes} : ${seconds}   ${am_pm}`;
+        }
+        setInterval(digitalClock, 1000);
+    </script>
+
+</body>
+
+</html>
