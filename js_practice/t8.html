@@ -87,7 +87,7 @@
 
             <input type="text" id="input" placeholder="Search Food Items Here">
 
-            <button id="clear">×</button>
+            <button id="clear">x</button>
         </div>
 
         <ul id="foodList">
@@ -123,7 +123,8 @@
                 if (food.includes(searchItem)) {
                     item.style.display = "";
                     found = true;
-                } else {
+                } 
+                else {
                     item.style.display = "none";
                 }
 
@@ -131,7 +132,8 @@
 
             if (found) {
                 noResults.innerHTML = "";
-            } else {
+            } 
+            else {
                 noResults.innerHTML = "No results found.";
             }
 

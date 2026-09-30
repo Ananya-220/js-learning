@@ -63,7 +63,9 @@
         <script>
             let submit = document.getElementById("registerBtn");
             submit.addEventListener("click", (e) => {
+
                 e.preventDefault();
+                
                 let enteredName = document.getElementById("name").value;
                 let enteredEmail = document.getElementById("email").value;
                 let enteredPhone = document.getElementById("phone").value;
