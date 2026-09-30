@@ -65,10 +65,13 @@
             charCounter.innerHTML = text.length;
             remainingCounter.innerHTML = maxLength - text.length;
 
-            if (text.length >= maxLength) {
-                err.innerHTML = "Character limit reached!";
-                textarea.disabled = true;
+            if (text.length > 0) {
+                if (text.length >= maxLength) {
+                    err.innerHTML = "Character limit reached !";
+                    textarea.disabled = true;
+                }
             }
+
         });
     </script>
 
