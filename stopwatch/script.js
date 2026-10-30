@@ -14,6 +14,7 @@ let hr = 0;
 let min = 0;
 let sec = 0;
 let ms = 0;
+
 let timer;
 let running = false;
 let lapNumber = 1;
