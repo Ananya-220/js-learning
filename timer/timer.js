@@ -54,7 +54,9 @@ startBtn.addEventListener("click", () => {
             totalSeconds--;
             updateDisplay();
 
-        } else {
+        } 
+        
+        else {
 
             clearInterval(timer);
             timer = null;
