@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.orbitron {
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    background: #cfe8f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    font-size: 55px;
+    color: #1f2937;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.card {
+    width: 650px;
+    margin: auto;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 50px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.colon {
+    color: #6b7280;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+button {
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.start {
+    background: #22c55e;
+}
+
+.start:hover {
+    background: #16a34a;
+}
+
+.pause {
+    background: #f59e0b;
+}
+
+.pause:hover {
+    background: #d97706;
+}
+
+.reset {
+    background: #ef4444;
+}
+
+.reset:hover {
+    background: #dc2626;
+}
+
+.lap {
+    background: #3b82f6;
+}
+
+.lap:hover {
+    background: #2563eb;
+}
+
+.lap-section {
+    text-align: left;
+}
+
+.lap-section h3 {
+    margin-bottom: 15px;
+    color: #1f2937;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 8px;
+    font-size: 22px;
+}
+
+#lapList {
+    list-style: none;
+    max-height: 220px;
+    overflow-y: auto;
+}
+
+#lapList li {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+}
+
+#lapList::-webkit-scrollbar {
+    width: 6px;
+}
+
+#lapList::-webkit-scrollbar-thumb {
+    background: #94a3b8;
+    border-radius: 10px;
+}
