@@ -56,12 +56,20 @@ startBtn.addEventListener('click' , () => {
         return;
     }
     running = true;
+    pauseBtn.textContent = 'Pause';
     timer = setInterval(stopwatch , 10);
 });
 
 pauseBtn.addEventListener('click' , () => {
-    clearInterval(timer);
-    running = false;
+    if (running) {
+        clearInterval(timer);
+        running = false;
+        pauseBtn.textContent = 'Resume';
+    } else if (hr > 0 || min > 0 || sec > 0 || ms > 0) {
+        running = true;
+        pauseBtn.textContent = 'Pause';
+        timer = setInterval(stopwatch , 10);
+    }
 });
 
 resetBtn.addEventListener('click' , () => {
@@ -73,6 +81,7 @@ resetBtn.addEventListener('click' , () => {
     ms = 0;
     lapNumber = 1;
     lapList.innerHTML = "" ;
+    pauseBtn.textContent = 'Pause';
     updateDisplay();
 });
 
@@ -89,7 +98,3 @@ lapBtn.addEventListener('click' , () => {
     lapList.prepend(li);
     lapNumber++;
 });
-
-
-
-
